@@ -1,5 +1,5 @@
 # pew
-This is a loader for privilege escalation workflows.
+This is a loader for privilege escalation workflows with windows.
 
 # Installation
 ```bash
