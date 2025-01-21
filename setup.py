@@ -17,15 +17,18 @@ subprocess.run(["sudo", "apt", "install", "-y", "mono-complete"])
 shell = os.environ.get("SHELL", "")
 bash_rc = os.path.expanduser("~/.bashrc")
 zsh_rc = os.path.expanduser("~/.zshrc")
-alias_command = "alias pew='python3 ~/.local/bin/pew/pew.py'\n"
+alias_pew = "alias pew='python3 ~/.local/bin/pew/pew.py'\n"
+alias_ee = "alias ee='vim ~/.local/bin/websrv/enum.txt'\n"
 
 if "bash" in shell and os.path.isfile(bash_rc):
     with open(bash_rc, "a") as f:
-        f.write(alias_command)
+        f.write(alias_pew)
+        f.write(alias_ee)
     shell_rc = bash_rc
 elif "zsh" in shell and os.path.isfile(zsh_rc):
     with open(zsh_rc, "a") as f:
-        f.write(alias_command)
+        f.write(alias_pew)
+        f.write(alias_ee)
     shell_rc = zsh_rc
 else:
     shell_rc = None
